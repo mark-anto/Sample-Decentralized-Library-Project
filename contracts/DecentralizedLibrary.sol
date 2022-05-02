@@ -6,10 +6,13 @@ import "./Owner.sol";
 
 contract DecentralizedLibrary is Owner {
     struct Book {
+        //Add next available date to the book data struct. Check for it when checking if a book is available.
+        //Create a function for the following/s -: 1. adding commission to each transaction. 2.Checking book availablity.
         string name;
         string description;
         bool available;
         uint256 price;
+        uint256 nextAvailableTimestamp;
         address owner;
     }
 
@@ -39,7 +42,14 @@ contract DecentralizedLibrary is Owner {
         string memory description,
         uint256 price
     ) public returns (bool) {
-        Book memory book = Book(name, description, true, price, _msgSender());
+        Book memory book = Book(
+            name,
+            description,
+            true,
+            price,
+            block.timestamp,
+            _msgSender()
+        );
         bookIdToBook[bookId] = book;
         emit NewBookAdded(bookId++);
         return true;
@@ -71,7 +81,9 @@ contract DecentralizedLibrary is Owner {
         uint256 endTime
     ) public payable returns (bool) {
         Book storage book = bookIdToBook[_bookId];
-
+        if (block.timestamp >= book.nextAvailableTimestamp) {
+            book.available = true;
+        }
         require(
             book.available == true,
             "This book is currently unavailable for borrowing."
@@ -84,6 +96,7 @@ contract DecentralizedLibrary is Owner {
 
         _sendTransaction(book.owner, _msgValue());
         emit NewTrackingCreated(bookId, trackingId++);
+        book.nextAvailableTimestamp = endTime;
         return true;
     }
 
