@@ -20,4 +20,4 @@ The following are the core product design issues I am facing. I will update thes
 -> Pending update.
 
 (Reminder to self - add comments to the project)
-This is unfinished. I paused this to gain more knowledge of Solidity and off-chain storage techniques and optimization. Will return and complete this after more experience.
+This is unfinished. I paused this to gain more knowledge of Solidity and off-chain storage techniques and gas optimization. Will return and complete this after more experience.
