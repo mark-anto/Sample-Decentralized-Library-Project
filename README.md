@@ -1,7 +1,8 @@
 # Sample Decentralized Library Project
 
 I have recently started on my journey to learn blockchain development. I am also a avid reader and that led me to think... what if there was a Decentralized Library.. that would be pretty cool. This is my effort to design one and learn on the go. I will keep improving it as I learn more.
-For now I have added the bare bones functionality of addition, deletion and borrowing books. While I was doing some reasearch for the same I stumbled upon a educative tutorial on how to make a decentralized library using tron https://github.com/TRON-Developer-Hub/decentralized-library.git - a shoutout from me to they/them. It helped me lay down the core design because this is my first actual blockchain project from scratch. I am facing some coer design issues/questions at this moment in time which are not technical in nature but more related to the core design of the product i.e a decentralized library. While I mull over these questions I will add some features which I have in mind like-:
+For now I have added the bare bones functionality of addition, deletion and borrowing books. While I was doing some reasearch for the same I stumbled upon a educative tutorial on how to make a decentralized library using tron https://github.com/TRON-Developer-Hub/decentralized-library.git - a shoutout from me to they/them. It helped me lay down the core design because this is my first actual blockchain project from scratch. I am facing some core design issues/questions at this moment in time which are not technical in nature but more related to the core design of the product i.e a decentralized library.
+While I mull over these questions I will add some features which I have in mind like-:
 
 -> Update price of existing book.
 
@@ -20,4 +21,5 @@ The following are the core product design issues I am facing. I will update thes
 -> Pending update.
 
 (Reminder to self - add comments to the project)
+
 This is unfinished. I paused this to gain more knowledge of Solidity and off-chain storage techniques and gas optimization. Will return and complete this after more experience.
